@@ -9,7 +9,7 @@ import requests
 import streamlit as st
 from dotenv import load_dotenv
 
-MODEL = "gemini-2.5-flash-lite"  # 무료 등급에서 쓸 수 있고, 유료로 넘어가도 가장 싼 모델
+MODEL = "gemini-3.1-flash-lite"  # 무료 등급에서 쓸 수 있고, 유료로 넘어가도 싼 모델 (2.5 Flash-Lite는 새 사용자에게 막힘)
 
 API = {
     "chat": f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent",  # 🔌 Gemini 답변 만들기
@@ -24,7 +24,7 @@ LIMITS = {
     "history_turns": 6,         # 이전 대화를 몇 번 주고받은 것까지 함께 보낼지 (길수록 입력 토큰이 늘어남)
 }
 
-PRICE_PER_1M = {"input": 0.10, "output": 0.40}  # 2.5 Flash-Lite 유료 단가 (USD, 2026-10-19 기준)
+PRICE_PER_1M = {"input": 0.25, "output": 1.50}  # 3.1 Flash-Lite 유료 단가 (USD, 2026-10-19 기준)
 
 SYSTEM_PROMPT = "너는 친절한 한국어 도우미야. 답은 짧고 쉽게 해 줘."
 
@@ -33,7 +33,7 @@ ERROR_CODES = {
     401: "제미나이 키가 틀렸어요. .env의 GEMINI_API_KEY를 확인해 주세요.",
     402: "선불 잔액이 0원이에요. 결제 계정이 연결돼 있다는 뜻이니 AI Studio 요금제를 확인해 주세요.",
     403: "제미나이 키에 권한이 없어요. AI Studio에서 키를 다시 확인해 주세요.",
-    404: f"{MODEL} 모델을 찾지 못했어요.",
+    404: f"{MODEL} 모델을 쓸 수 없어요. 파일 맨 위 MODEL을 AI Studio에 있는 모델 이름으로 바꿔 주세요.",
     429: "무료 사용량을 다 썼어요. 1분 뒤나 내일 다시 시도해 주세요. (무료 등급이라 돈은 나가지 않아요)",
 }
 

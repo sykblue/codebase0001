@@ -38,6 +38,8 @@
 
 무료로 쓸 수 있는 대표 모델: **Gemini 3.8 Flash, 3.6 Flash, 3.5 Flash-Lite, 3.1 Flash-Lite, 2.5 Pro, 2.5 Flash, 2.5 Flash-Lite**
 
+> ⚠️ `gemini-2.5-flash-lite`는 요금표에는 있지만 **새 사용자는 쓸 수 없어요** (404 NOT_FOUND). 챗봇은 `gemini-3.1-flash-lite`를 씁니다.
+
 > Google Cloud 신규 가입 $300 크레딧은 **Gemini API에 쓸 수 없습니다** (2026-03-02 이후 가입 계정).
 
 ---
